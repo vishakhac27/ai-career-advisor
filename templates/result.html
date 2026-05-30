@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="result-container">
+
+    <h1>Your Career Analysis</h1>
+
+    <div class="career-card">
+    <h2>User Profile</h2>
+
+    <p><strong>Name:</strong> {{ name }}</p>
+    <p><strong>Education:</strong> {{ education }}</p>
+    <p><strong>Skills:</strong> {{ skills }}</p>
+    <p><strong>Interests:</strong> {{ interests }}</p>
+    <p><strong>Goal:</strong> {{ goal }}</p>
+</div>
+
+    <div class="score-card">
+        <h2>Career Match Score</h2>
+       <div class="score">
+    {{ score }}%
+</div>
+    </div>
+
+    <div class="career-card">
+        <h2>Recommended Career</h2>
+
+        <div class="career-card">
+    <h2>Why This Career?</h2>
+
+    <p>
+        Your interest in programming, problem solving and web technologies
+        indicates strong alignment with Full Stack Development.
+    </p>
+</div>
+
+       <h3>{{ career }}</h3>
+        <p>
+            Based on your skills and interests, Full Stack Development
+            appears to be the strongest career match.
+        </p>
+    </div>
+
+    <div class="skills-section">
+        <h2>Skills Gap Analysis</h2>
+
+       <div class="skill-tags">
+
+    {% for tech in technologies %}
+        <span class="skill">
+            {{ tech }}
+        </span>
+    {% endfor %}
+
+</div>
+    </div>
+
+  <div class="roadmap-section">
+    <h2>Learning Roadmap</h2>
+
+    {% for step in roadmap %}
+    <div class="roadmap-step">
+        <span>{{ loop.index }}</span>
+        {{ step }}
+    </div>
+    {% endfor %}
+
+</div>
+
+    <button class="download-btn">
+        Download Career Report
+    </button>
+
+</div>
+
+</body>
+</html>

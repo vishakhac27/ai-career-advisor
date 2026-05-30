@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Assessment</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="assessment-container">
+
+    <h1>Career Assessment</h1>
+    <p>Tell us about yourself and we'll recommend the best career path.</p>
+
+    <form action="/result" method="POST" class="assessment-form">
+
+        <input type="text" name="name" placeholder="Your Name" required>
+
+        <select name="education" required>
+            <option value="">Select Education</option>
+            <option>BCA</option>
+            <option>B.Tech</option>
+            <option>B.Sc</option>
+            <option>MCA</option>
+            <option>M.Tech</option>
+            <option>Other</option>
+        </select>
+
+        <input type="text"
+               name="skills"
+               placeholder="Skills (HTML, CSS, Python, SQL...)"
+               required>
+
+        <input type="text"
+               name="interests"
+               placeholder="Interests (AI, Web Development, Data Science...)"
+               required>
+
+        <select name="goal" required>
+            <option value="">Career Goal</option>
+            <option>Job</option>
+            <option>Freelancing</option>
+            <option>Startup</option>
+            <option>Higher Studies</option>
+        </select>
+
+        <button type="submit">
+            Analyze My Career
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
