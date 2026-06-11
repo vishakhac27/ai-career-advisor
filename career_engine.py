@@ -4,19 +4,16 @@ from dotenv import load_dotenv
 import os
 
 
-# -----------------------------
-# GROQ CLIENT (FIX YOUR KEY HERE)
+
 load_dotenv()
-# -----------------------------
+
 client = OpenAI(
    
     api_key=os.getenv("GROQ_API_KEY"),
     base_url="https://api.groq.com/openai/v1"
 )
 
-# -----------------------------
-# FALLBACK (ONLY IF AI FAILS)
-# -----------------------------
+
 def recommend_career(skills, interests):
 
     skills = skills.lower()
@@ -81,9 +78,7 @@ Goal: {goal}
     return content
 
 
-# -----------------------------
-# WRAPPER (MAIN FUNCTION USED BY FLASK)
-# -----------------------------
+
 def get_career_data(name, education, skills, interests, goal):
 
     try:
